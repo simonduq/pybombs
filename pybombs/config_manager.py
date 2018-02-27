@@ -89,6 +89,7 @@ class PrefixInfo(object):
         self.prefix_dir = None
         self.prefix_cfg_dir = None
         self.prefix_src = None
+        self.prefix_python_ver = None
         self.alias = None
         self.src_dir = None
         self.cfg_file = None
