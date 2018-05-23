@@ -336,6 +336,7 @@ class ConfigManager(object):
             verb_level = pb_logging.OBNOXIOUS
         pb_logging.logger.setLevel(verb_level)
         self.yes = args.yes
+        self.no = args.no
         ## Set up logger:
         self.log = pb_logging.logger.getChild("ConfigManager")
         ## Setup cfg_cascade:
@@ -633,6 +634,11 @@ class ConfigManager(object):
         group.add_argument(
             '-y', '--yes',
             help="Answer all questions with 'yes'.",
+            action='store_true',
+        )
+        group.add_argument(
+            '-n', '--no',
+            help="Answer all questions with 'no'.",
             action='store_true',
         )
         self.parser = parser

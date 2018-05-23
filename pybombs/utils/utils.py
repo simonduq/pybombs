@@ -49,6 +49,8 @@ def confirm(question, default="N", timeout=0):
     from pybombs.config_manager import config_manager
     if config_manager.yes:
         return True
+    if config_manager.no:
+        return False
     question = question.strip()
     # Remove the question mark
     if question[-1] == "?":
