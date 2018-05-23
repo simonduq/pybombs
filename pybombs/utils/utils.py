@@ -57,8 +57,12 @@ def confirm(question, default="N", timeout=0):
         question = question[:-1]
     if default.upper() == "Y":
         question = question + " [Y]/N?"
+        if config_manager.non_interactive:
+            return True
     elif default.upper() == "N":
         question = question + " Y/[N]?"
+        if config_manager.non_interactive:
+            return False
     else:
         raise ValueError("default must be either 'Y' or 'N'")
     question = question + ' '
